@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ben Tabor — Chemical & Biomolecular Engineer</title>
+  <meta name="description" content="Resume, experience, and projects of Ben Tabor, Chemical & Biomolecular Engineering student at UMD." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0d12; --panel:#10141b; --muted:#c6cbd2; --text:#e8edf5; --accent:#7dd3fc; --accent-2:#a78bfa; --card:#0f1724; --border:#1e2633;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7fafc; --panel:#ffffff; --muted:#4a5568; --text:#0f172a; --accent:#0369a1; --accent-2:#5b21b6; --card:#ffffff; --border:#e2e8f0; }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient(180deg, var(--bg), rgba(0,0,0,0));z-index:10}
+    nav{display:flex;gap:16px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);backdrop-filter:blur(6px);}
+    .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+    .chip{padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:var(--panel)}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--text);font-weight:600}
+    .btn:hover{transform:translateY(-1px)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:28px 0}
+    .hero-card{background:radial-gradient(1200px 600px at 10% -20%, rgba(125,211,252,0.15), transparent),radial-gradient(900px 400px at 100% 0%, rgba(167,139,250,0.12), transparent);border:1px solid var(--border);border-radius:24px;padding:28px}
+    h1{font-size:40px;line-height:1.1;margin:0 0 10px}
+    .sub{color:var(--muted);margin:10px 0 18px}
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid.cols-3{grid-template-columns:1fr}.grid.cols-2{grid-template-columns:1fr}}
+    section{padding:24px 0}
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
+    .tag{display:inline-block;padding:4px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:12px}
+    .stack{display:flex;gap:10px;flex-wrap:wrap}
+    .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .muted{color:var(--muted)}
+    .timeline{position:relative}
+    .timeline::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:var(--border)}
+    .tl-item{position:relative;padding-left:32px;margin:14px 0}
+    .tl-item::before{content:"";position:absolute;left:6px;top:6px;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 0 3px var(--bg)}
+    footer{border-top:1px solid var(--border);padding:18px 0;color:var(--muted)}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,"Liberation Mono","Courier New", monospace; padding:2px 6px;border:1px solid var(--border);border-radius:6px;background:var(--panel);}
+    .pill{padding:6px 10px;border:1px dashed var(--border);border-radius:999px}
+    .avatar{width:96px;height:96px;border-radius:16px;border:1px solid var(--border);object-fit:cover}
+    .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:900px){.proj-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="row">
+          <span class="chip">Ben Tabor</span>
+          <span class="pill">Chemical & Biomolecular Engineering @ UMD</span>
+        </div>
+        <div class="nav-links">
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#resume" class="btn" download>Download Résumé (PDF)</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Engineer, problem‑solver, and student leader.</h1>
+        <p class="sub">I’m Ben, a Chemical & Biomolecular Engineering undergrad at the University of Maryland (’26, 4.0 GPA). I build reliable processes, lead student teams, and love turning messy problems into clean systems.</p>
+        <div class="stack">
+          <a class="btn" href="mailto:ben@example.com">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="#projects">View Projects</a>
+        </div>
+      </div>
+      <div class="grid">
+        <img class="avatar" src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=400&auto=format&fit=crop" alt="Portrait placeholder" />
+        <div class="card">
+          <div class="row"><span class="tag">Current</span><strong>Process Engineering Intern — ExxonMobil (Gas‑Phase PE)</strong></div>
+          <p class="muted">Debottlenecked catalyst feed, improved pilot‑plant reliability, optimized solids handling, and built statistical models for new control methods.</p>
+        </div>
+        <div class="card">
+          <div class="row"><span class="tag">On Campus</span><strong>President‑elect — AIChE @ UMD</strong></div>
+          <p class="muted">Runs peer mentoring (30 mentees / 19 mentors), corporate outreach, and high‑engagement events. Teaching Fellow for Thermodynamics I.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-title">
+        <h2>Experience</h2>
+        <span class="muted">Recent roles & impact</span>
+      </div>
+      <div class="timeline">
+        <div class="tl-item card">
+          <div class="row" style="justify-content:space-between">
+            <strong>ExxonMobil — Gas‑Phase Polyethylene, Process Engineering</strong>
+            <span class="muted">Summer 2025 • Baytown, TX</span>
+          </div>
+          <ul>
+            <li>Increased catalyst feed capacity by modifying critical component geometry; validated with process calculations and field constraints.</li>
+            <li>Improved pilot‑plant uptime through reliability actions (instrumentation, procedures, spares).</li>
+            <li>Diagnosed solids‑handling root causes; implemented corrective actions reducing unplanned downtime.</li>
+            <li>Built & evaluated statistical models supporting a new control method; recommended next‑step experiments.</li>
+          </ul>
+        </div>
+        <div class="tl-item card">
+          <div class="row" style="justify-content:space-between">
+            <strong>Saft Batteries — Quality Engineering</strong>
+            <span class="muted">2024</span>
+          </div>
+          <ul>
+            <li>Drove lean improvements via time studies and custom fixtures; reduced cycle time on key QC steps.</li>
+            <li>Authored standard work and data tools to increase first‑pass yield visibility.</li>
+          </ul>
+        </div>
+        <div class="tl-item card">
+          <div class="row" style="justify-content:space-between">
+            <strong>UMD — Functional Macromolecular Lab</strong>
+            <span class="muted">2023–present</span>
+          </div>
+          <ul>
+            <li>Electrolyte development for low‑temperature coin cells; automated data parsing & visualization.</li>
+          </ul>
+        </div>
+        <div class="tl-item card">
+          <div class="row" style="justify-content:space-between">
+            <strong>UMD — Sustainable Separations Lab</strong>
+            <span class="muted">2024–present</span>
+          </div>
+          <ul>
+            <li>Polyester interfacial polymerization for hollow‑fiber membranes; property–performance analysis.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <span class="muted">Selected work</span>
+      </div>
+      <div class="proj-grid">
+        <article class="card">
+          <h3>Volturtle e‑Scooter Charging</h3>
+          <p class="muted">Multi‑year campus project: modular charging stations (UMD‑themed), safety & throughput modeling, stakeholder funding.</p>
+          <div class="stack"><span class="tag">CAD</span><span class="tag">PM</span><span class="tag">Stakeholders</span></div>
+        </article>
+        <article class="card">
+          <h3>Peer Mentoring Platform</h3>
+          <p class="muted">Digital infrastructure to match undergrads to labs; survey pipelines, matching logic, and mentor training content.</p>
+          <div class="stack"><span class="tag">Python</span><span class="tag">Sheets</span><span class="tag">Ops</span></div>
+        </article>
+        <article class="card">
+          <h3>Nanoparticle BBB Delivery</h3>
+          <p class="muted">Capstone: Fingolimod delivery across BBB; ISO‑10993 & FDA pathways with business model and risk plan.</p>
+          <div class="stack"><span class="tag">Biomaterials</span><span class="tag">Regulatory</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <span class="muted">Tools & capabilities</span>
+      </div>
+      <div class="grid cols-3">
+        <div class="card">
+          <strong>Process & Data</strong>
+          <p class="muted">Mass/energy balances, EOS, DoE/statistics, reliability, FMEA, SPC.</p>
+        </div>
+        <div class="card">
+          <strong>Software</strong>
+          <p class="muted">Python, MATLAB, Excel/VBA, Power BI, JMP, CAD basics.</p>
+        </div>
+        <div class="card">
+          <strong>Leadership</strong>
+          <p class="muted">AIChE president‑elect, teaching fellow, fundraising, partnerships.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <div class="section-title">
+        <h2>Résumé</h2>
+        <span class="muted">One‑page snapshot</span>
+      </div>
+      <div class="card">
+        <p class="muted">Drop your PDF named <code>resume.pdf</code> in the same folder as this file, and this button will download it. You can also link directly to Google Drive or Notion.</p>
+        <a class="btn" href="resume.pdf" download>Download Résumé</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <span class="muted">Let’s connect</span>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <p><strong>Email:</strong> <a href="mailto:ben@example.com">ben@example.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">in/your-handle</a></p>
+          <p><strong>Location:</strong> College Park, MD</p>
+        </div>
+        <div class="card">
+          <p class="muted">Want a custom domain (e.g., <em>ben-tabor.com</em>)? Point DNS to GitHub Pages and drop a <code>CNAME</code> file with your domain at the root of this site.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Ben Tabor • Built with clean HTML/CSS • <span class="kbd">⌘/Ctrl</span> + <span class="kbd">K</span> to jump</div>
+  </footer>
+
+  <script>
+    // Simple command palette to jump to sections
+    const map={"e":"#experience","p":"#projects","s":"#skills","r":"#resume","c":"#contact"};
+    window.addEventListener('keydown',e=>{
+      const mod=e.metaKey||e.ctrlKey; if(mod && e.key.toLowerCase()==='k'){e.preventDefault();const k=prompt('Jump to: [e]xperience, [p]rojects, [s]kills, [r]esume, [c]ontact'); if(!k) return; const sel=map[k.toLowerCase()]; if(sel) location.hash=sel;}
+    });
+    document.getElementById('y').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
