@@ -4,170 +4,314 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ben Tabor — Chemical & Biomolecular Engineer</title>
-  <meta name="description" content="Resume, experience, and projects of Ben Tabor, Chemical & Biomolecular Engineering student at UMD." />
+  <meta name="description" content="Ben Tabor — Clark Scholar and Chemical & Biomolecular Engineering student at UMD. Experience in polymers, batteries, quality, and process optimization." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0d12; --panel:#10141b; --muted:#c6cbd2; --text:#e8edf5; --accent:#7dd3fc; --accent-2:#a78bfa; --card:#0f1724; --border:#1e2633;
+      /* Light theme (default) */
+      --bg:#f7fafc; --panel:#ffffff; --muted:#4a5568; --text:#0f172a; --accent:#1d4ed8; --accent-2:#5b21b6; --card:#ffffff; --border:#e2e8f0; --ring:rgba(29,78,216,.25);
     }
-    @media (prefers-color-scheme: light){
-      :root{ --bg:#f7fafc; --panel:#ffffff; --muted:#4a5568; --text:#0f172a; --accent:#0369a1; --accent-2:#5b21b6; --card:#ffffff; --border:#e2e8f0; }
+    [data-theme="dark"]{
+      --bg:#0b0d12; --panel:#10141b; --muted:#c6cbd2; --text:#e8edf5; --accent:#7dd3fc; --accent-2:#a78bfa; --card:#0f1724; --border:#1e2633; --ring:rgba(125,211,252,.25);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;background:linear-gradient(180deg, var(--bg), rgba(0,0,0,0));z-index:10}
-    nav{display:flex;gap:16px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);backdrop-filter:blur(6px);}
-    .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+    img{max-width:100%;height:auto;border-radius:16px}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    header{position:sticky;top:0;background:linear-gradient(180deg, var(--bg), rgba(0,0,0,0));z-index:20}
+    nav{display:flex;gap:16px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);backdrop-filter:blur(6px);padding-bottom:10px}
+    .nav-left{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
     .chip{padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:var(--panel)}
+    .pill{padding:6px 10px;border:1px dashed var(--border);border-radius:999px}
+    .nav-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--text);font-weight:600}
     .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:var(--accent);color:#fff;border-color:transparent}
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:28px 0}
     .hero-card{background:radial-gradient(1200px 600px at 10% -20%, rgba(125,211,252,0.15), transparent),radial-gradient(900px 400px at 100% 0%, rgba(167,139,250,0.12), transparent);border:1px solid var(--border);border-radius:24px;padding:28px}
-    h1{font-size:40px;line-height:1.1;margin:0 0 10px}
+    h1{font-size:40px;line-height:1.12;margin:0 0 10px}
+    h2{margin:0 0 10px}
     .sub{color:var(--muted);margin:10px 0 18px}
+    .stack{display:flex;gap:10px;flex-wrap:wrap}
+    .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .muted{color:var(--muted)}
+    .badge{display:inline-flex;align-items:center;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:var(--panel);font-size:12px;color:var(--muted)}
     .grid{display:grid;gap:16px}
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
     .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid.cols-3{grid-template-columns:1fr}.grid.cols-2{grid-template-columns:1fr}}
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
+      .nav-links{gap:10px}
+      .btn{padding:10px 12px}
+    }
     section{padding:24px 0}
     .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
     .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
     .tag{display:inline-block;padding:4px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:12px}
-    .stack{display:flex;gap:10px;flex-wrap:wrap}
-    .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-    .muted{color:var(--muted)}
     .timeline{position:relative}
     .timeline::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:var(--border)}
     .tl-item{position:relative;padding-left:32px;margin:14px 0}
     .tl-item::before{content:"";position:absolute;left:6px;top:6px;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 0 3px var(--bg)}
     footer{border-top:1px solid var(--border);padding:18px 0;color:var(--muted)}
     .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,"Liberation Mono","Courier New", monospace; padding:2px 6px;border:1px solid var(--border);border-radius:6px;background:var(--panel);}
-    .pill{padding:6px 10px;border:1px dashed var(--border);border-radius:999px}
-    .avatar{width:96px;height:96px;border-radius:16px;border:1px solid var(--border);object-fit:cover}
     .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .proj-grid article:hover{box-shadow:0 10px 30px var(--ring)}
     @media (max-width:900px){.proj-grid{grid-template-columns:1fr}}
+
+    /* Command palette */
+    #palette{position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.35);backdrop-filter:blur(2px);z-index:50}
+    #palette .panel{width:min(720px,92vw);background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 10px 40px var(--ring)}
+    #palette input{width:100%;padding:14px 16px;border:0;outline:none;background:transparent;color:var(--text)}
+    #palette ul{list-style:none;margin:0;padding:0}
+    #palette li{padding:12px 16px;border-top:1px solid var(--border);cursor:pointer}
+    #palette li:hover{background:var(--card)}
+
+    /* Tiny demo widgets */
+    .demo{display:grid;gap:12px}
+    .demo .out{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .meter{height:10px;background:var(--border);border-radius:999px;overflow:hidden}
+    .meter>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+    .toggle{border:none;background:transparent;color:var(--muted);cursor:pointer}
   </style>
 </head>
+
 <body>
   <header>
     <div class="container">
-      <nav>
-        <div class="row">
+      <nav aria-label="Primary">
+        <div class="nav-left">
           <span class="chip">Ben Tabor</span>
           <span class="pill">Chemical & Biomolecular Engineering @ UMD</span>
+          <span class="badge">Clark Scholar</span>
+          <span class="badge">Engineering Honors</span>
+          <span class="badge">GPA 4.0</span>
         </div>
         <div class="nav-links">
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
+          <a href="#demos">Demos</a>
+          <a href="#leadership">Leadership</a>
           <a href="#skills">Skills</a>
-          <a href="#resume" class="btn" download>Download Résumé (PDF)</a>
+          <a href="#resume" class="btn">Résumé</a>
+          <button id="theme" class="btn" aria-label="Toggle theme">🌙</button>
+          <button id="openK" class="btn" aria-label="Open command palette"><span class="kbd">⌘/Ctrl</span>+<span class="kbd">K</span></button>
         </div>
       </nav>
     </div>
   </header>
 
   <main class="container">
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-card">
-        <h1>Engineer, problem‑solver, and student leader.</h1>
-        <p class="sub">I’m Ben, a Chemical & Biomolecular Engineering undergrad at the University of Maryland (’26, 4.0 GPA). I build reliable processes, lead student teams, and love turning messy problems into clean systems.</p>
+        <h1>Engineer, problem-solver, and student leader.</h1>
+        <p class="sub">I’m Ben, a Chemical & Biomolecular Engineering undergrad at the University of Maryland (’26). I build reliable processes, optimize labs and plants, and love turning messy problems into clean systems.</p>
         <div class="stack">
-          <a class="btn" href="mailto:ben@example.com">Email</a>
-          <a class="btn" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn primary" href="mailto:ben.tabor50@gmail.com">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/bentabor" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" href="#demos">Try Demos</a>
+        </div>
+        <div class="row" style="margin-top:12px">
+          <span class="badge">UMD ChemE Most Outstanding Junior (’25)</span>
+          <span class="badge">ASPIRE Grant (’24, ’25)</span>
+          <span class="badge">AIChE NCS Outstanding Student (’24)</span>
         </div>
       </div>
       <div class="grid">
-        <img class="avatar" src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=400&auto=format&fit=crop" alt="Portrait placeholder" />
+        <img class="avatar" src="headshot.jpg" alt="Headshot of Ben Tabor in a suit" width="420" height="560" />
         <div class="card">
-          <div class="row"><span class="tag">Current</span><strong>Process Engineering Intern — ExxonMobil (Gas‑Phase PE)</strong></div>
-          <p class="muted">Debottlenecked catalyst feed, improved pilot‑plant reliability, optimized solids handling, and built statistical models for new control methods.</p>
+          <div class="row"><span class="tag">Current</span><strong>Process Engineering Intern — ExxonMobil (Polymer Process Tech)</strong></div>
+          <p class="muted">Debottlenecked polyethylene reactors, implemented reliability upgrades, and accelerated lab testing for critical control metrics.</p>
         </div>
         <div class="card">
-          <div class="row"><span class="tag">On Campus</span><strong>President‑elect — AIChE @ UMD</strong></div>
-          <p class="muted">Runs peer mentoring (30 mentees / 19 mentors), corporate outreach, and high‑engagement events. Teaching Fellow for Thermodynamics I.</p>
+          <div class="row"><span class="tag">On Campus</span><strong>President — AIChE @ UMD</strong></div>
+          <p class="muted">Lead 75+ engineers; launched peer mentoring; corporate outreach and high-engagement events. Teaching Fellow for Thermo & Fluids.</p>
         </div>
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience">
       <div class="section-title">
         <h2>Experience</h2>
         <span class="muted">Recent roles & impact</span>
       </div>
+
       <div class="timeline">
         <div class="tl-item card">
           <div class="row" style="justify-content:space-between">
-            <strong>ExxonMobil — Gas‑Phase Polyethylene, Process Engineering</strong>
-            <span class="muted">Summer 2025 • Baytown, TX</span>
+            <strong>ExxonMobil — Polymer Process Technology, Process Engineering Intern</strong>
+            <span class="muted">May–Aug 2025 • Baytown, TX</span>
           </div>
           <ul>
-            <li>Increased catalyst feed capacity by modifying critical component geometry; validated with process calculations and field constraints.</li>
-            <li>Improved pilot‑plant uptime through reliability actions (instrumentation, procedures, spares).</li>
-            <li>Diagnosed solids‑handling root causes; implemented corrective actions reducing unplanned downtime.</li>
-            <li>Built & evaluated statistical models supporting a new control method; recommended next‑step experiments.</li>
+            <li>Redesigned reactor component using solids-flow principles to debottleneck commercial polyethylene reactors, unlocking significant additional output.</li>
+            <li>Designed & implemented a purge system for reactor sight glasses to reduce maintenance and improve quality/reliability.</li>
+            <li>Optimized a lab test for a key control metric via workflow changes and a heat exchanger design, cutting cycle time by ~50%.</li>
+            <li>Partnered across engineering, operations, technicians, vendors, and peers to deliver cross-functional solutions.</li>
           </ul>
         </div>
+
         <div class="tl-item card">
           <div class="row" style="justify-content:space-between">
-            <strong>Saft Batteries — Quality Engineering</strong>
-            <span class="muted">2024</span>
+            <strong>University of Maryland — Functional Macromolecular Laboratory, Undergraduate Researcher</strong>
+            <span class="muted">Aug 2024–Present • College Park, MD</span>
           </div>
           <ul>
-            <li>Drove lean improvements via time studies and custom fixtures; reduced cycle time on key QC steps.</li>
-            <li>Authored standard work and data tools to increase first‑pass yield visibility.</li>
+            <li>Engineering Li-ion electrolytes for −60 °C performance; fabricate/test coin cells to assess stability, conductivity, and cycling behavior.</li>
+            <li>Prototyping a custom part to improve symmetrical assembly and replicability.</li>
           </ul>
         </div>
+
         <div class="tl-item card">
           <div class="row" style="justify-content:space-between">
-            <strong>UMD — Functional Macromolecular Lab</strong>
-            <span class="muted">2023–present</span>
+            <strong>Saft Batteries — Quality Engineering Intern</strong>
+            <span class="muted">May–Aug 2024 • Cockeysville, MD</span>
           </div>
           <ul>
-            <li>Electrolyte development for low‑temperature coin cells; automated data parsing & visualization.</li>
+            <li>Drove lean improvements in final inspection; time studies & capacity modeling for demand readiness.</li>
+            <li>Built Excel model to optimize 25-hour production cycles and minimize downtime.</li>
+            <li>Modeled new line to right-size ovens and electrode storage for higher throughput at lower cost.</li>
+            <li>3D-printed custom tooling to accelerate inspections and improve reliability.</li>
           </ul>
         </div>
+
         <div class="tl-item card">
           <div class="row" style="justify-content:space-between">
-            <strong>UMD — Sustainable Separations Lab</strong>
-            <span class="muted">2024–present</span>
+            <strong>UMD — Sustainable Separations Laboratory, Undergraduate Researcher</strong>
+            <span class="muted">Mar 2023–May 2024 • College Park, MD</span>
           </div>
           <ul>
-            <li>Polyester interfacial polymerization for hollow‑fiber membranes; property–performance analysis.</li>
+            <li>Streamlined polyester interfacial polymerization for hollow-fiber modules (~20% faster).</li>
+            <li>Synthesized polyester, polyamide, and polyimide membranes; prepared thermodynamic dopes.</li>
+            <li>Built/tested modules to evaluate permeability & selectivity; tuned manufacturing to hit targets.</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects">
       <div class="section-title">
         <h2>Projects</h2>
-        <span class="muted">Selected work</span>
+        <span class="muted">Selected work & write-ups</span>
       </div>
       <div class="proj-grid">
         <article class="card">
-          <h3>Volturtle e‑Scooter Charging</h3>
-          <p class="muted">Multi‑year campus project: modular charging stations (UMD‑themed), safety & throughput modeling, stakeholder funding.</p>
-          <div class="stack"><span class="tag">CAD</span><span class="tag">PM</span><span class="tag">Stakeholders</span></div>
+          <h3>Volturtle e-Scooter Charging</h3>
+          <p class="muted">Multi-year campus effort: modular charging stations, UMD-themed industrial design, safety/throughput modeling, stakeholder funding.</p>
+          <details>
+            <summary>Read more</summary>
+            <ul>
+              <li>CAD for enclosure & mounting.</li>
+              <li>Queueing-based throughput estimates and safety FMEA.</li>
+              <li>Partnered with facilities and student orgs for deployment.</li>
+            </ul>
+          </details>
+          <div class="stack"><span class="tag">CAD</span><span class="tag">PM</span><span class="tag">Modeling</span></div>
         </article>
+
         <article class="card">
           <h3>Peer Mentoring Platform</h3>
-          <p class="muted">Digital infrastructure to match undergrads to labs; survey pipelines, matching logic, and mentor training content.</p>
-          <div class="stack"><span class="tag">Python</span><span class="tag">Sheets</span><span class="tag">Ops</span></div>
+          <p class="muted">Digital infrastructure to match undergrads to labs and mentors; surveys, matching logic, and training content.</p>
+          <details><summary>Read more</summary>
+            <ul>
+              <li>Launched with 19 mentors & 31 mentees; automated matching & onboarding.</li>
+              <li>Templates: interest forms, mentor SOPs, event cadence.</li>
+            </ul>
+          </details>
+          <div class="stack"><span class="tag">Python</span><span class="tag">Ops</span><span class="tag">Sheets</span></div>
         </article>
+
         <article class="card">
           <h3>Nanoparticle BBB Delivery</h3>
-          <p class="muted">Capstone: Fingolimod delivery across BBB; ISO‑10993 & FDA pathways with business model and risk plan.</p>
+          <p class="muted">Capstone concept: Fingolimod delivery across BBB; ISO-10993 & FDA pathways with business model and risk plan.</p>
+          <details><summary>Read more</summary>
+            <ul>
+              <li>Biomaterials selection & toxicity considerations.</li>
+              <li>Clinical & regulatory mapping with milestones.</li>
+            </ul>
+          </details>
           <div class="stack"><span class="tag">Biomaterials</span><span class="tag">Regulatory</span></div>
         </article>
       </div>
     </section>
 
+    <!-- INTERACTIVE DEMOS -->
+    <section id="demos">
+      <div class="section-title">
+        <h2>Interactive Demos</h2>
+        <span class="muted">Simple, browser-only models inspired by my work</span>
+      </div>
+
+      <div class="grid cols-2">
+        <!-- Demo 1: Inspection / Throughput -->
+        <div class="card demo" id="demo-qc">
+          <h3>QC Throughput vs. Inspection Time</h3>
+          <p class="muted">Explore how inspection time and stations change hourly throughput.</p>
+          <label>Inspection time (min): <input id="qcTime" type="range" min="1" max="15" value="5" /> <span id="qcTimeVal">5</span></label>
+          <label>Stations: <input id="qcStations" type="range" min="1" max="6" value="2" /> <span id="qcStationsVal">2</span></label>
+          <div class="out"><strong>Throughput:</strong> <span id="qcOut">24</span> units/hour</div>
+          <div class="meter" aria-hidden="true"><span id="qcBar" style="width:40%"></span></div>
+        </div>
+
+        <!-- Demo 2: Reactor debottleneck -->
+        <div class="card demo" id="demo-reactor">
+          <h3>Reactor Capacity Impact</h3>
+          <p class="muted">Baseline 100 → adjust % increase from debottlenecking.</p>
+          <label>Capacity increase (%): <input id="rxInc" type="range" min="0" max="30" value="8" /> <span id="rxIncVal">8</span>%</label>
+          <div class="out"><strong>New capacity:</strong> <span id="rxNew">108</span> (vs. 100 baseline)</div>
+          <div class="meter" aria-hidden="true"><span id="rxBar" style="width:54%"></span></div>
+        </div>
+
+        <!-- Demo 3: Electrolyte temp effect -->
+        <div class="card demo" id="demo-electrolyte">
+          <h3>Electrolyte Conductivity (relative)</h3>
+          <p class="muted">Toy Arrhenius-style temperature factor (illustrative only).</p>
+          <label>Temperature (°C): <input id="elT" type="range" min="-60" max="25" value="-20" /> <span id="elTVal">−20</span></label>
+          <div class="out"><strong>Relative conductivity:</strong> <span id="elOut">0.44×</span></div>
+          <div class="meter" aria-hidden="true"><span id="elBar" style="width:44%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section id="leadership">
+      <div class="section-title">
+        <h2>Leadership</h2>
+        <span class="muted">Teams, programs, & service</span>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <strong>AIChE @ UMD — President</strong> <span class="muted">May 2025–Present</span>
+          <ul>
+            <li>Lead 75+ engineers; community, professional development, and corporate outreach.</li>
+            <li>Grew sponsorships and student engagement.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Chemical Engineering Peer Mentor Program — Founder</strong> <span class="muted">Feb 2025–Present</span>
+          <ul>
+            <li>Launched with 19 mentors & 31 mentees; strengthened community and research access.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Dean of Engineering Student Advisory Council — Member</strong> <span class="muted">May 2024–Present</span>
+          <ul><li>Presented mentoring program outcomes to the Dean; advised on student success initiatives.</li></ul>
+        </div>
+        <div class="card">
+          <strong>Teaching Fellow — Thermodynamics I & Fluid Mechanics</strong> <span class="muted">2024–2025</span>
+          <ul><li>Supported instruction and mentoring for core ChemE courses.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
     <section id="skills">
       <div class="section-title">
         <h2>Skills</h2>
@@ -175,31 +319,36 @@
       </div>
       <div class="grid cols-3">
         <div class="card">
-          <strong>Process & Data</strong>
-          <p class="muted">Mass/energy balances, EOS, DoE/statistics, reliability, FMEA, SPC.</p>
-        </div>
-        <div class="card">
           <strong>Software</strong>
-          <p class="muted">Python, MATLAB, Excel/VBA, Power BI, JMP, CAD basics.</p>
+          <p class="muted">MATLAB, Python, Excel (advanced), Aspen, MathCAD, Minitab, JMP, AutoCAD, Bluebeam.</p>
         </div>
         <div class="card">
-          <strong>Leadership</strong>
-          <p class="muted">AIChE president‑elect, teaching fellow, fundraising, partnerships.</p>
+          <strong>Process</strong>
+          <p class="muted">Polymer & battery manufacturing, process optimization, scale-up (pilot → commercial), quality control, reliability.</p>
+        </div>
+        <div class="card">
+          <strong>Methods</strong>
+          <p class="muted">Mass/energy balances, EOS, DoE/statistics, FMEA, SPC, capacity modeling.</p>
         </div>
       </div>
     </section>
 
+    <!-- RESUME -->
     <section id="resume">
       <div class="section-title">
         <h2>Résumé</h2>
-        <span class="muted">One‑page snapshot</span>
+        <span class="muted">One-page snapshot</span>
       </div>
       <div class="card">
-        <p class="muted">Drop your PDF named <code>resume.pdf</code> in the same folder as this file, and this button will download it. You can also link directly to Google Drive or Notion.</p>
-        <a class="btn" href="resume.pdf" download>Download Résumé</a>
+        <div class="stack">
+          <a class="btn primary" href="resume.pdf" download>Download Résumé (PDF)</a>
+          <a class="btn" href="BENJAMIN TABOR RESUME F25.pdf" download>Alt link (original filename)</a>
+        </div>
+        <p class="muted" style="margin-top:10px">Place <code>resume.pdf</code> at the site root (or keep your original filename). The buttons will download it.</p>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
       <div class="section-title">
         <h2>Contact</h2>
@@ -207,12 +356,12 @@
       </div>
       <div class="grid cols-2">
         <div class="card">
-          <p><strong>Email:</strong> <a href="mailto:ben@example.com">ben@example.com</a></p>
-          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">in/your-handle</a></p>
+          <p><strong>Email:</strong> <a href="mailto:ben.tabor50@gmail.com">ben.tabor50@gmail.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/bentabor" target="_blank" rel="noopener">in/bentabor</a></p>
           <p><strong>Location:</strong> College Park, MD</p>
         </div>
         <div class="card">
-          <p class="muted">Want a custom domain (e.g., <em>ben-tabor.com</em>)? Point DNS to GitHub Pages and drop a <code>CNAME</code> file with your domain at the root of this site.</p>
+          <p class="muted">Tip: add a <code>CNAME</code> if you later want a custom domain (e.g., <em>bentabor.com</em>). This site is mobile-first, keyboard-friendly (<span class="kbd">⌘/Ctrl</span>+<span class="kbd">K</span>), and supports light/dark themes.</p>
         </div>
       </div>
     </section>
@@ -222,13 +371,106 @@
     <div class="container">© <span id="y"></span> Ben Tabor • Built with clean HTML/CSS • <span class="kbd">⌘/Ctrl</span> + <span class="kbd">K</span> to jump</div>
   </footer>
 
+  <!-- Command palette -->
+  <div id="palette" aria-hidden="true">
+    <div class="panel">
+      <input id="kinput" type="text" placeholder="Type a section… (experience, projects, demos, leadership, skills, resume, contact)" aria-label="Command palette"/>
+      <ul id="klist">
+        <li data-h="#experience">Experience</li>
+        <li data-h="#projects">Projects</li>
+        <li data-h="#demos">Demos</li>
+        <li data-h="#leadership">Leadership</li>
+        <li data-h="#skills">Skills</li>
+        <li data-h="#resume">Résumé</li>
+        <li data-h="#contact">Contact</li>
+        <li data-h="#top">Back to top</li>
+      </ul>
+    </div>
+  </div>
+
   <script>
-    // Simple command palette to jump to sections
-    const map={"e":"#experience","p":"#projects","s":"#skills","r":"#resume","c":"#contact"};
-    window.addEventListener('keydown',e=>{
-      const mod=e.metaKey||e.ctrlKey; if(mod && e.key.toLowerCase()==='k'){e.preventDefault();const k=prompt('Jump to: [e]xperience, [p]rojects, [s]kills, [r]esume, [c]ontact'); if(!k) return; const sel=map[k.toLowerCase()]; if(sel) location.hash=sel;}
+    // Theme toggle with persistence
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('theme');
+    const saved = localStorage.getItem('theme');
+    if(saved==='dark') root.setAttribute('data-theme','dark');
+    themeBtn.textContent = root.hasAttribute('data-theme') ? '☀️' : '🌙';
+    themeBtn.addEventListener('click',()=>{
+      const dark = root.toggleAttribute('data-theme');
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+      themeBtn.textContent = dark ? '☀️' : '🌙';
     });
+
+    // Year
     document.getElementById('y').textContent=new Date().getFullYear();
+
+    // Command palette
+    const pal = document.getElementById('palette');
+    const input = document.getElementById('kinput');
+    const list = document.getElementById('klist');
+    function openPal(){ pal.style.display='grid'; pal.setAttribute('aria-hidden','false'); input.value=''; input.focus(); }
+    function closePal(){ pal.style.display='none'; pal.setAttribute('aria-hidden','true'); }
+    document.getElementById('openK').addEventListener('click', openPal);
+    window.addEventListener('keydown',e=>{
+      const mod=e.metaKey||e.ctrlKey;
+      if(mod && e.key.toLowerCase()==='k'){ e.preventDefault(); pal.style.display==='grid'?closePal():openPal(); }
+      if(e.key==='Escape') closePal();
+    });
+    list.addEventListener('click', e=>{
+      const li = e.target.closest('li'); if(!li) return;
+      const h = li.getAttribute('data-h'); closePal(); if(h==='#top'){ window.scrollTo({top:0,behavior:'smooth'});}else{ location.hash=h; }
+    });
+    input.addEventListener('input', ()=>{
+      const q = input.value.toLowerCase();
+      list.querySelectorAll('li').forEach(li=>{
+        li.style.display = li.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
+    });
+
+    // --- Interactive demos ---
+    // QC throughput
+    const qcTime = document.getElementById('qcTime');
+    const qcStations = document.getElementById('qcStations');
+    const qcTimeVal = document.getElementById('qcTimeVal');
+    const qcStationsVal = document.getElementById('qcStationsVal');
+    const qcOut = document.getElementById('qcOut');
+    const qcBar = document.getElementById('qcBar');
+    function updQC(){
+      const t = +qcTime.value; const s = +qcStations.value;
+      qcTimeVal.textContent=t; qcStationsVal.textContent=s;
+      const perStation = 60/t; // units/hour per station
+      const th = Math.round(perStation*s);
+      qcOut.textContent = th;
+      qcBar.style.width = Math.min(100, th)*1 + '%';
+    }
+    qcTime.addEventListener('input',updQC); qcStations.addEventListener('input',updQC); updQC();
+
+    // Reactor capacity
+    const rxInc = document.getElementById('rxInc');
+    const rxIncVal = document.getElementById('rxIncVal');
+    const rxNew = document.getElementById('rxNew');
+    const rxBar = document.getElementById('rxBar');
+    function updRX(){
+      const p = +rxInc.value; rxIncVal.textContent=p;
+      const newCap = Math.round(100*(1+p/100));
+      rxNew.textContent = newCap;
+      rxBar.style.width = (50 + p*1.5) + '%';
+    }
+    rxInc.addEventListener('input',updRX); updRX();
+
+    // Electrolyte relative conductivity (toy model)
+    const elT = document.getElementById('elT');
+    const elTVal = document.getElementById('elTVal');
+    const elOut = document.getElementById('elOut');
+    const elBar = document.getElementById('elBar');
+    function updEL(){
+      const T = +elT.value; elTVal.textContent = (T<0? '−'+Math.abs(T): T) ;
+      // simple illustrative factor: grows with temperature (not a real dataset)
+      const rel = Math.max(0, Math.min(1, (T+60)/85));
+      elOut.textContent = (rel.toFixed(2))+'×';
+      elBar.style.width = (rel*100).toFixed(0)+'%';
+    }
+    elT.addEventListener('input',updEL); updEL();
   </script>
 </body>
 </html>
